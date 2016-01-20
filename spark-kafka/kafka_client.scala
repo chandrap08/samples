@@ -1,5 +1,3 @@
-package pochi.spark.streaming
-
 import org.apache.spark._
 import org.apache.spark.streaming.kafka.KafkaUtils
 import org.apache.spark.streaming._
@@ -8,7 +6,6 @@ import org.apache.spark.streaming.StreamingContext._
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
-
 import org.apache.spark.sql._
 import org.elasticsearch.spark.sql._
 import org.apache.spark.storage.StorageLevel
@@ -20,9 +17,7 @@ object Elastic {
     val numThreads = 1
     val zookeeperQuorum = "localhost:2181"
     val groupId = "test"
-
     val topic = Array("test").map((_, numThreads)).toMap
-
     val sc = new SparkConf()
                  .setMaster("local[*]")
                  .setAppName("MyApp")
